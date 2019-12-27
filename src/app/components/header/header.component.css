@@ -1,0 +1,13 @@
+.background {
+  background-color: #26272B;
+}
+
+img{
+  width: 100%;
+}
+
+a{
+  color: white;
+  text-decoration: underline;
+  font-size: larger;
+}

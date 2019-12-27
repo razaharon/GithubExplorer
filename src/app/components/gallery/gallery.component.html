@@ -1,0 +1,26 @@
+<div class="container mt-3">
+  <div class="row text-center">
+    <div class="col-10 m-auto">
+      <i *ngIf="!items || items.length===0">There are no repositories to display</i>
+    </div>
+  </div>
+  
+  <div *ngIf="items && items.length > 0" class="row">
+    <div *ngFor="let item of items" class="col-md-4 col-lg-3 mt-4">
+      <div (mouseenter)="showFavoriteIcon($event)" (mouseleave)="hideFavoriteIcon($event)"
+        (dblclick)="openRepository(item.html_url)" class="card border border-dark shadow">
+        <img src="{{ item.owner.avatar_url }}" class="card-img-top">
+        <div class="card-body">
+          <p class="card-text d-inline">
+            {{ item.name }} <br>
+            by: {{ item.owner.login }}
+          </p>
+          <a (click)="favorite(item, $event)" [ngClass]="favorites.includes(item) ? 'is-favorite' : ''"
+            class="favorite-icon float-right" href="">
+            <i class="fas fa-star"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

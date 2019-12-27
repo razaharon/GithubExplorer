@@ -1,0 +1,16 @@
+span{
+  font-size: larger;
+}
+
+.favorite-icon{
+  visibility: hidden;
+  font-size: x-large;
+}
+
+a{
+  color: black !important;
+}
+
+.is-favorite{
+  color: gold !important
+}

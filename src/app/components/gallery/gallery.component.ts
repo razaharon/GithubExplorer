@@ -20,7 +20,7 @@ export class GalleryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.favorites = JSON.parse(localStorage.getItem('favorites') || "[]");
+    this.favorites = JSON.parse(sessionStorage.getItem('favorites') || "[]");
     if (this._route.snapshot.url[0].path === 'favorites')
       this.items = this.favorites;
     this._repositories.itemsUpdates.subscribe(items => this.items = items);
@@ -42,7 +42,7 @@ export class GalleryComponent implements OnInit {
     } else {
       this.favorites.push(item);
     }
-    localStorage.setItem('favorites', JSON.stringify(this.favorites));
+    sessionStorage.setItem('favorites', JSON.stringify(this.favorites));
   }
 
   public openRepository(url: string): void {

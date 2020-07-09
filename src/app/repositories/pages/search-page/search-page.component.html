@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="row mt-4">
+    <div class="col-12">
+    <app-search-bar (search)="getRepositories($event)" inputPlaceholder="Search Repository..."></app-search-bar>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <app-gallery [items]="items"></app-gallery>
+  </div>
+</div>
+
+</div>

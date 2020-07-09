@@ -4,7 +4,7 @@
       <i *ngIf="!items || items.length===0">There are no repositories to display</i>
     </div>
   </div>
-  
+
   <div *ngIf="items && items.length > 0" class="row">
     <div *ngFor="let item of items" class="col-md-4 col-lg-3 mt-4">
       <div (mouseenter)="showFavoriteIcon($event)" (mouseleave)="hideFavoriteIcon($event)"
@@ -15,7 +15,8 @@
             {{ item.name }} <br>
             by: {{ item.owner.login }}
           </p>
-          <a (click)="favorite(item, $event)" [ngClass]="favorites.includes(item) ? 'is-favorite' : ''"
+          <a (click)="favorite(item, $event)"
+          [ngClass]="{'is-favorite':isFavorite(item)}"
             class="favorite-icon float-right" href="">
             <i class="fas fa-star"></i>
           </a>

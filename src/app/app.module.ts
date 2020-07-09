@@ -1,26 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
-import { SearchPageComponent } from './components/search-page/search-page.component';
-
+import { CoreModule } from './core/core.module';
+import { RepositoriesModule } from './repositories/repositories.module';
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    SearchBarComponent,
-    GalleryComponent,
-    SearchPageComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    CoreModule,
+    RepositoriesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

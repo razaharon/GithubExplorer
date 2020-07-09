@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 offset-lg-2 col-md-6">
+    <div class="col-lg-8 offset-lg-2">
       <div class="input-group">
         <input #searchValue (keyup)="keyPress($event, searchValue.value)" type="text" class="form-control"
-          placeholder="Search Repository...">
+          placeholder="{{inputPlaceholder}}">
         <div class="input-group-append">
-          <button (click)="search(searchValue.value)" class="btn btn-outline-secondary" type="button">Search</button>
+          <button (click)="onSearch(searchValue.value)" class="btn btn-outline-secondary" type="button">Search</button>
         </div>
       </div>
     </div>

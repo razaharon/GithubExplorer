@@ -10,4 +10,5 @@ a{
   color: white;
   text-decoration: underline;
   font-size: larger;
+  cursor: pointer;
 }
